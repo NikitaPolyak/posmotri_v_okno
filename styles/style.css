@@ -38,8 +38,8 @@ ol {
 }
 
 .content {
-  width: 1140px;
-  height: 534px;
+  max-width: 1140px;
+  max-height: 534px;
   display: flex;
   align-items: end;
   gap: 30px;
@@ -135,6 +135,7 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
@@ -197,16 +198,42 @@ ol {
 
 .search-form__fieldset {
   border: none;
-  appearance: none;
 }
 
-.seearch-form__lable:has(:focus-visible) { /*ВОПРОС!!!*/ /*скорее всего не верно*/
-  outline:2px solid rgb(255, 255, 255);
-  outline-offset:2px;
+.search-form__label {
+  width: fit-content;
+}
+
+.search-form__textfield {
+  background-color: transparent;
+  appearance: none;
+  min-width: 225px;
+  min-height: 27px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Fira Sans Condensed", "Arial", sans-serif; 
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  letter-spacing: 0%;
+  text-align: left;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-top: 1px solid rgb(255, 255, 255);
+}
+
+.search-form__textfield:active {/*КОСЯК нужно подумать*/
+  box-sizing: border-box;
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .search-form__textfield:focus {
-    outline:none;
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid rgb(255, 255, 255);
+  outline-offset:2px;
 }
 
 .search-form__label .search-form__pseudo-checkbox {
@@ -217,17 +244,7 @@ ol {
   border: 1px solid rgb(255, 255, 255);
   vertical-align: middle;
   cursor: pointer;
-  /*margin: 0px 5px;*/
-}
-
-
-.search-form__label:hover {
-  /*width: fit-content;*/
-  text-decoration: underline;
-}
-
-input[type="checkbox"]:disabled + span {
-
+  margin: 0px 5px;
 }
 
 input[type="checkbox"]:checked + span {
@@ -240,8 +257,8 @@ input[type="checkbox"]:checked + span {
   margin: auto;
 }
 
-input[type="checkbox"]:focus-visible + span { /*скорее всего не верно*/
-
+.search-form__label:hover {
+  text-decoration: underline;
 }
 
 .button:hover {
@@ -263,4 +280,27 @@ input[type="checkbox"]:focus-visible + span { /*скорее всего не в�
   box-sizing: border-box;
   outline: 1px solid rgb(255, 255, 255);
   outline-offset: 2px;
+}
+
+.content__card-link:hover{
+  text-decoration: underline;
+}
+
+.content__card-link_current{
+  background: rgb(84, 80, 80);
+  text-decoration: none;
+}
+
+.content__card-link:active{
+  background: rgb(84, 80, 80);
+  text-decoration: none;
+}
+
+.content__card-link:focus{
+  outline: none;
+}
+
+.content__card-link:focus-visible{
+  box-sizing: border-box;
+  border: 1px solid rgb(255, 255, 255);
 }
