@@ -58,6 +58,7 @@ ol {
   line-height: 0.94;
   text-align: left;
   text-transform: uppercase;
+  cursor: default;
 }
 
 .content__details {
@@ -126,6 +127,8 @@ ol {
   line-height: 1.66;
   letter-spacing: 0%;
   text-align: left;
+  cursor: default;
+
 }
 
 .content__accent {
@@ -204,6 +207,11 @@ ol {
   width: fit-content;
   display: flex;
   gap: 6px;
+  cursor: pointer;
+}
+
+.search-form__label:hover {
+  text-decoration: underline;
 }
 
 .search-form__textfield {
@@ -241,26 +249,22 @@ ol {
   outline: 1px solid rgb(255, 255, 255);
   outline-offset:1px;
 }
+
 .search-form__pseudo-checkbox {
+  display: flex;
   width: 19px;
   height: 19px;
   border: 1px solid rgb(255, 255, 255);
-  cursor: pointer;
 }
 
 input[type="checkbox"]:checked + .search-form__pseudo-checkbox::after {
   content: '';
-  position: absolute;
   width: 16px;
   height: 16px;
   outline: 1px solid rgb(255, 255, 255);
   outline-offset: 2px;
   background: rgb(255, 255, 255);
   margin: auto;
-}
-
-.search-form__label-text:hover {
-  text-decoration: underline;
 }
 
 .button:hover {
